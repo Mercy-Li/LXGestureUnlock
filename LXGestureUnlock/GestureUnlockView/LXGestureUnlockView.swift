@@ -13,7 +13,7 @@ protocol LXGestureUnlockViewDelegate {
     func gestureViewDidCancel(view: LXGestureUnlockView)
 }
 
-class LXGestureUnlockView: UIView, LXGestureUnlockViewDelegate {
+class LXGestureUnlockView: UIView {
     
     var pointViews = [UIView]()
     
@@ -27,13 +27,20 @@ class LXGestureUnlockView: UIView, LXGestureUnlockViewDelegate {
     var offColor = UIColor.greenColor()
     var onColor  = UIColor.redColor()
     
+    var isDrawing = false
+    
+    var drawingPoints = [UIView]()
+    var codes = String()
+    var currentPoint: CGPoint?
+    
+    var delegate: LXGestureUnlockViewDelegate?
     
     override init(frame: CGRect) {
         width = Double(frame.size.width)
         height = Double(frame.size.height)
         diameter = (width-2*horizontalMargin-2*padding)/3.0
         super.init(frame: frame)
-        
+        self.backgroundColor = UIColor.whiteColor()
         self.loadPointViews()
     }
 
@@ -58,7 +65,7 @@ class LXGestureUnlockView: UIView, LXGestureUnlockViewDelegate {
             
             var point = UIView(frame: CGRectMake(0, 0, CGFloat(diameter / 2), CGFloat(diameter / 2)))
             point.center             = CGPointMake(CGFloat(diameter/2), CGFloat(diameter/2))
-            point.layer.cornerRadius = CGFloat(diameter / 2.0)
+            point.layer.cornerRadius = CGFloat(diameter / 2.0 / 2.0)
             point.clipsToBounds      = true
             point.backgroundColor    = offColor
             point.hidden             = true
@@ -70,38 +77,120 @@ class LXGestureUnlockView: UIView, LXGestureUnlockViewDelegate {
     }
     
     func reset() {
+        for view in pointViews {
+            self.setOn(false, view: view)
+        }
+        isDrawing = false
+        codes.removeAll(keepCapacity: false)
+        currentPoint = nil
+        drawingPoints.removeAll(keepCapacity: false)
+        self.setNeedsDisplay()
+    }
+    
+    func setOn(isOn: Bool, view: UIView) {
+
+        var subPoint: UIView = view.subviews[0] as! UIView
+        
+        view.layer.borderColor = isOn ? onColor.CGColor : offColor.CGColor
+        subPoint.backgroundColor = isOn ? onColor : offColor
+        
+        subPoint.hidden = !isOn
         
     }
     
-    func setOn(isOn: Bool, index: Int) {
-//        if let view = pointViews[index] {
-//            view.layer.borderColor = isOn ? onColor.CGColor : offColor.CGColor
-//        }
-        
+    func indexOfPoint(point: CGPoint) -> Int? {
+        for view in pointViews {
+            if view.frame.contains(point) {
+                return find(pointViews, view)
+            }
+        }
+        return nil
+    }
+    
+    func updatePoint(point: CGPoint) {
+        if let index = self.indexOfPoint(point) {
+            var view = pointViews[index]
+            if (find(drawingPoints, view) == nil) {
+                drawingPoints.append(view)
+                self.setOn(true, view: view)
+                codes += String(index)
+            }
+        }
         
     }
     
     override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
-    
+        self.reset()
+        isDrawing = true
     }
     
     override func touchesMoved(touches: Set<NSObject>, withEvent event: UIEvent) {
-        
+        if isDrawing {
+            let point = (touches as NSSet).anyObject()!.locationInView(self)
+            currentPoint = point
+            self.updatePoint(point)
+            self.setNeedsDisplay()
+        }
     }
     
     override func touchesEnded(touches: Set<NSObject>, withEvent event: UIEvent) {
-        
+        if isDrawing {
+            if let d = self.delegate {
+                d.gestureViewDidFinish(self, code: codes)
+                
+            }
+            currentPoint = nil
+            self.reset()
+        }
+        self.setNeedsDisplay()
     }
     
     override func touchesCancelled(touches: Set<NSObject>!, withEvent event: UIEvent!) {
-        
+        if isDrawing {
+            self.reset()
+            if let d = self.delegate {
+                d.gestureViewDidCancel(self)
+            }
+        }
     }
     
-    func gestureViewDidFinish(view: LXGestureUnlockView, code: String) {
+    override func drawRect(rect: CGRect) {
+//        super.drawRect(rect)
+        if isDrawing {
+            var context = UIGraphicsGetCurrentContext()
+            for var i = 0; i < drawingPoints.count; i++ {
+                var view = drawingPoints[i]
+                var center = view.center
+                if i == 0 {
+                    CGContextMoveToPoint(context, center.x, center.y)
+                } else {
+                    var lastPoint = drawingPoints[i].center
+                    CGContextAddLineToPoint(context, lastPoint.x, lastPoint.y)
+                }
+                if (i == drawingPoints.count-1) {
+                    if let cp = currentPoint {
+                        CGContextAddLineToPoint(context, cp.x, cp.y)
+                    }
+                }
+            }
+//            for view in pointViews {
+//                println(view.frame)
+//                var clipPath = UIBezierPath(roundedRect: view.frame, cornerRadius: CGFloat(diameter/2.0))
+//                clipPath.addClip()
+//                
+//            }
         
+            
+            CGContextSetStrokeColorWithColor(context, onColor.CGColor)
+            CGContextSetLineWidth(context, 5)
+            CGContextStrokePath(context)
+            
+            CGContextSetFillColorWithColor(context, UIColor.whiteColor().CGColor)
+            for view in pointViews {
+                CGContextFillEllipseInRect(context, view.frame)
+            }
+        }
     }
     
-    func gestureViewDidCancel(view: LXGestureUnlockView) {
-        
-    }
+    
 }
