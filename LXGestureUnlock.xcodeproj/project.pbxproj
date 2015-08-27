@@ -13,6 +13,20 @@
 		F23EF7441B8C0D6000B241A3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F23EF7431B8C0D6000B241A3 /* Images.xcassets */; };
 		F23EF7471B8C0D6000B241A3 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F23EF7451B8C0D6000B241A3 /* LaunchScreen.xib */; };
 		F23EF7531B8C0D6000B241A3 /* LXGestureUnlockTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23EF7521B8C0D6000B241A3 /* LXGestureUnlockTests.swift */; };
+		F23EF75E1B8C0F7B00B241A3 /* LXGestureUnlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23EF75D1B8C0F7B00B241A3 /* LXGestureUnlockView.swift */; };
+		F23EF76E1B8C688900B241A3 /* Constraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23EF7601B8C688900B241A3 /* Constraint.swift */; };
+		F23EF76F1B8C688900B241A3 /* ConstraintAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23EF7611B8C688900B241A3 /* ConstraintAttributes.swift */; };
+		F23EF7701B8C688900B241A3 /* ConstraintDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23EF7621B8C688900B241A3 /* ConstraintDescription.swift */; };
+		F23EF7711B8C688900B241A3 /* ConstraintItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23EF7631B8C688900B241A3 /* ConstraintItem.swift */; };
+		F23EF7721B8C688900B241A3 /* ConstraintMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23EF7641B8C688900B241A3 /* ConstraintMaker.swift */; };
+		F23EF7731B8C688900B241A3 /* ConstraintRelation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23EF7651B8C688900B241A3 /* ConstraintRelation.swift */; };
+		F23EF7741B8C688900B241A3 /* Debugging.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23EF7661B8C688900B241A3 /* Debugging.swift */; };
+		F23EF7751B8C688900B241A3 /* EdgeInsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23EF7671B8C688900B241A3 /* EdgeInsets.swift */; };
+		F23EF7761B8C688900B241A3 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F23EF7681B8C688900B241A3 /* Info.plist */; };
+		F23EF7771B8C688900B241A3 /* LayoutConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23EF7691B8C688900B241A3 /* LayoutConstraint.swift */; };
+		F23EF7781B8C688900B241A3 /* SnapKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23EF76B1B8C688900B241A3 /* SnapKit.swift */; };
+		F23EF7791B8C688900B241A3 /* View+SnapKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23EF76C1B8C688900B241A3 /* View+SnapKit.swift */; };
+		F23EF77A1B8C688900B241A3 /* ViewController+SnapKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23EF76D1B8C688900B241A3 /* ViewController+SnapKit.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +50,21 @@
 		F23EF74C1B8C0D6000B241A3 /* LXGestureUnlockTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LXGestureUnlockTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F23EF7511B8C0D6000B241A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F23EF7521B8C0D6000B241A3 /* LXGestureUnlockTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LXGestureUnlockTests.swift; sourceTree = "<group>"; };
+		F23EF75D1B8C0F7B00B241A3 /* LXGestureUnlockView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LXGestureUnlockView.swift; sourceTree = "<group>"; };
+		F23EF7601B8C688900B241A3 /* Constraint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constraint.swift; sourceTree = "<group>"; };
+		F23EF7611B8C688900B241A3 /* ConstraintAttributes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintAttributes.swift; sourceTree = "<group>"; };
+		F23EF7621B8C688900B241A3 /* ConstraintDescription.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintDescription.swift; sourceTree = "<group>"; };
+		F23EF7631B8C688900B241A3 /* ConstraintItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintItem.swift; sourceTree = "<group>"; };
+		F23EF7641B8C688900B241A3 /* ConstraintMaker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintMaker.swift; sourceTree = "<group>"; };
+		F23EF7651B8C688900B241A3 /* ConstraintRelation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintRelation.swift; sourceTree = "<group>"; };
+		F23EF7661B8C688900B241A3 /* Debugging.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Debugging.swift; sourceTree = "<group>"; };
+		F23EF7671B8C688900B241A3 /* EdgeInsets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EdgeInsets.swift; sourceTree = "<group>"; };
+		F23EF7681B8C688900B241A3 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F23EF7691B8C688900B241A3 /* LayoutConstraint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayoutConstraint.swift; sourceTree = "<group>"; };
+		F23EF76A1B8C688900B241A3 /* SnapKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SnapKit.h; sourceTree = "<group>"; };
+		F23EF76B1B8C688900B241A3 /* SnapKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapKit.swift; sourceTree = "<group>"; };
+		F23EF76C1B8C688900B241A3 /* View+SnapKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "View+SnapKit.swift"; sourceTree = "<group>"; };
+		F23EF76D1B8C688900B241A3 /* ViewController+SnapKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ViewController+SnapKit.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,11 +106,13 @@
 		F23EF7391B8C0D6000B241A3 /* LXGestureUnlock */ = {
 			isa = PBXGroup;
 			children = (
+				F23EF75C1B8C0F5400B241A3 /* GestureUnlockView */,
 				F23EF73C1B8C0D6000B241A3 /* AppDelegate.swift */,
 				F23EF73E1B8C0D6000B241A3 /* ViewController.swift */,
 				F23EF7401B8C0D6000B241A3 /* Main.storyboard */,
 				F23EF7431B8C0D6000B241A3 /* Images.xcassets */,
 				F23EF7451B8C0D6000B241A3 /* LaunchScreen.xib */,
+				F23EF75F1B8C688900B241A3 /* SnapKit */,
 				F23EF73A1B8C0D6000B241A3 /* Supporting Files */,
 			);
 			path = LXGestureUnlock;
@@ -110,6 +141,36 @@
 				F23EF7511B8C0D6000B241A3 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F23EF75C1B8C0F5400B241A3 /* GestureUnlockView */ = {
+			isa = PBXGroup;
+			children = (
+				F23EF75D1B8C0F7B00B241A3 /* LXGestureUnlockView.swift */,
+			);
+			path = GestureUnlockView;
+			sourceTree = "<group>";
+		};
+		F23EF75F1B8C688900B241A3 /* SnapKit */ = {
+			isa = PBXGroup;
+			children = (
+				F23EF7601B8C688900B241A3 /* Constraint.swift */,
+				F23EF7611B8C688900B241A3 /* ConstraintAttributes.swift */,
+				F23EF7621B8C688900B241A3 /* ConstraintDescription.swift */,
+				F23EF7631B8C688900B241A3 /* ConstraintItem.swift */,
+				F23EF7641B8C688900B241A3 /* ConstraintMaker.swift */,
+				F23EF7651B8C688900B241A3 /* ConstraintRelation.swift */,
+				F23EF7661B8C688900B241A3 /* Debugging.swift */,
+				F23EF7671B8C688900B241A3 /* EdgeInsets.swift */,
+				F23EF7681B8C688900B241A3 /* Info.plist */,
+				F23EF7691B8C688900B241A3 /* LayoutConstraint.swift */,
+				F23EF76A1B8C688900B241A3 /* SnapKit.h */,
+				F23EF76B1B8C688900B241A3 /* SnapKit.swift */,
+				F23EF76C1B8C688900B241A3 /* View+SnapKit.swift */,
+				F23EF76D1B8C688900B241A3 /* ViewController+SnapKit.swift */,
+			);
+			name = SnapKit;
+			path = Source;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -192,6 +253,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F23EF7761B8C688900B241A3 /* Info.plist in Resources */,
 				F23EF7421B8C0D6000B241A3 /* Main.storyboard in Resources */,
 				F23EF7471B8C0D6000B241A3 /* LaunchScreen.xib in Resources */,
 				F23EF7441B8C0D6000B241A3 /* Images.xcassets in Resources */,
@@ -212,8 +274,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F23EF7711B8C688900B241A3 /* ConstraintItem.swift in Sources */,
+				F23EF7731B8C688900B241A3 /* ConstraintRelation.swift in Sources */,
+				F23EF7781B8C688900B241A3 /* SnapKit.swift in Sources */,
+				F23EF7741B8C688900B241A3 /* Debugging.swift in Sources */,
+				F23EF7751B8C688900B241A3 /* EdgeInsets.swift in Sources */,
+				F23EF7791B8C688900B241A3 /* View+SnapKit.swift in Sources */,
+				F23EF76E1B8C688900B241A3 /* Constraint.swift in Sources */,
 				F23EF73F1B8C0D6000B241A3 /* ViewController.swift in Sources */,
+				F23EF75E1B8C0F7B00B241A3 /* LXGestureUnlockView.swift in Sources */,
+				F23EF76F1B8C688900B241A3 /* ConstraintAttributes.swift in Sources */,
+				F23EF7771B8C688900B241A3 /* LayoutConstraint.swift in Sources */,
+				F23EF7721B8C688900B241A3 /* ConstraintMaker.swift in Sources */,
 				F23EF73D1B8C0D6000B241A3 /* AppDelegate.swift in Sources */,
+				F23EF77A1B8C688900B241A3 /* ViewController+SnapKit.swift in Sources */,
+				F23EF7701B8C688900B241A3 /* ConstraintDescription.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

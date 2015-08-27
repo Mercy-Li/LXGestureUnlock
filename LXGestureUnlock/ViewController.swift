@@ -13,6 +13,9 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        var screentWidth = UIScreen.mainScreen().bounds.size.width
+        var gestureView = LXGestureUnlockView(frame: CGRectMake(0, 0, screentWidth, screentWidth))
+        self.view.addSubview(gestureView)
     }
 
     override func didReceiveMemoryWarning() {
